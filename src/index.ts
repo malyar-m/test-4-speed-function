@@ -3,7 +3,6 @@ import typeDefs from './graphql/schema';
 import resolvers from './graphql/resolvers';
 import http from 'http';
 import cors from 'cors';
-// import bodyParser from 'body-parser';
 import { expressMiddleware } from '@apollo/server/express4';
 import { ApolloServer } from '@apollo/server';
 import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer'

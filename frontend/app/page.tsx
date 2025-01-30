@@ -1,10 +1,10 @@
 import ClientOnly from "./components/ClientOnly";
-import Earthquake from "./components/Earchquakes";
+import EarthquakeList from "./components/EarthquakesList";
 
 export default function Home() {
   return (
     <ClientOnly>
-      <Earthquake />
+      <EarthquakeList />
     </ClientOnly>
   );
 }

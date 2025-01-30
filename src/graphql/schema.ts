@@ -9,7 +9,8 @@ const typeDefs = `
   }
 
   type Query {
-    earthquakes: [Earthquake!]!
+    earthquakes(id: ID): [Earthquake!]!
+    earthquake(id: ID!): Earthquake
   }
 
   type Mutation {
