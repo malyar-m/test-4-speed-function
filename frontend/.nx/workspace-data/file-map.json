@@ -1,0 +1,111 @@
+{
+  "version": "6.0",
+  "nxVersion": "20.4.0",
+  "pathMappings": {
+    "@/*": [
+      "./*"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".gitignore",
+        "hash": "1867017717006394117"
+      },
+      {
+        "file": "README.md",
+        "hash": "10766794746169900117"
+      },
+      {
+        "file": "apollo-client.ts",
+        "hash": "4169339704667791690"
+      },
+      {
+        "file": "app/components/ClientOnly.tsx",
+        "hash": "6671951181159506547"
+      },
+      {
+        "file": "app/components/EarthquakeForm.tsx",
+        "hash": "3571463943160936491"
+      },
+      {
+        "file": "app/components/EarthquakesList.tsx",
+        "hash": "4958602212782179914"
+      },
+      {
+        "file": "app/components/favicon.ico",
+        "hash": "9157999678830540297"
+      },
+      {
+        "file": "app/earthquake-form/page.tsx",
+        "hash": "12258531933525662600"
+      },
+      {
+        "file": "app/globals.css",
+        "hash": "15891550427149691066"
+      },
+      {
+        "file": "app/layout.tsx",
+        "hash": "3921529253805330979"
+      },
+      {
+        "file": "app/page.tsx",
+        "hash": "8174345094751608403"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "11349616980964601162"
+      },
+      {
+        "file": "graphql.ts",
+        "hash": "4701466733538021427"
+      },
+      {
+        "file": "next.config.ts",
+        "hash": "545444515968818318"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "6071827626028731068"
+      },
+      {
+        "file": "package.json",
+        "hash": "5939876911806523025"
+      },
+      {
+        "file": "postcss.config.mjs",
+        "hash": "2557392112968376575"
+      },
+      {
+        "file": "public/file.svg",
+        "hash": "15617830351863523835"
+      },
+      {
+        "file": "public/globe.svg",
+        "hash": "9134466864871335697"
+      },
+      {
+        "file": "public/next.svg",
+        "hash": "8300767200008744458"
+      },
+      {
+        "file": "public/vercel.svg",
+        "hash": "3007623926711696394"
+      },
+      {
+        "file": "public/window.svg",
+        "hash": "16677869292061012332"
+      },
+      {
+        "file": "tailwind.config.ts",
+        "hash": "5799848408308142097"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "10540259928187216457"
+      }
+    ]
+  }
+}
