@@ -5,14 +5,14 @@ const resolvers = {
     earthquakes: async () => await Earthquake.findAll(),
   },
   Mutation: {
-    addEarthquake: async (_: any, { location, magnitude, date }: any) =>
+    addEarthquake: async (_: any, { location, magnitude, date }: EarthquakeModel) =>
       await Earthquake.create({ location, magnitude, date }),
-    updateEarthquake: async (_: any, { id, location, magnitude, date }: any) => {
+    updateEarthquake: async (_: any, { id, location, magnitude, date }: EarthquakeModel) => {
       const earthquake = await Earthquake.findByPk(id);
       if (!earthquake) throw new Error('Earthquake not found');
       return await earthquake.update({ location, magnitude, date });
     },
-    deleteEarthquake: async (_: any, { id }: any) => {
+    deleteEarthquake: async (_: any, { id }: EarthquakeModel) => {
       const earthquake = await Earthquake.findByPk(id);
       if (!earthquake) throw new Error('Earthquake not found');
       await earthquake.destroy();

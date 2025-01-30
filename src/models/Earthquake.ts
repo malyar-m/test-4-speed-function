@@ -31,6 +31,7 @@ Earthquake.init(
   {
     sequelize,
     tableName: 'earthquakes',
+    timestamps: false,
   }
 );
 

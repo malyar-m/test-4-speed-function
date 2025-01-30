@@ -1,9 +1,18 @@
-Test task for Speed&Function company.
-
+# **Test task for Speed&Function company.**
 
 http://localhost:8080/ - phpmyadmin
 
-## Setup
+## Setup Frontend
+
+```
+cd frontend
+npm i
+npm run dev
+```
+
+URL: http://localhost:3001
+
+## Setup Backend
 
 Build docker database php admin containers:
 
