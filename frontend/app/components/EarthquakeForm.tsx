@@ -1,42 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { gql, useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-
-const GET_EARTHQUAKE = gql`
-  query GetEarthquake($id: ID!) {
-    earthquake(id: $id) {
-      id
-      location
-      magnitude
-      date
-    }
-  }
-`;
-
-const ADD_EARTHQUAKE = gql`
-  mutation AddEarthquake($location: String!, $magnitude: Float!, $date: String!) {
-    addEarthquake(location: $location, magnitude: $magnitude, date: $date) {
-      id
-      location
-      magnitude
-      date
-    }
-  }
-`;
-
-const UPDATE_EARTHQUAKE = gql`
-  mutation UpdateEarthquake($id: ID!, $location: String!, $magnitude: Float!, $date: String!) {
-    updateEarthquake(id: $id, location: $location, magnitude: $magnitude, date: $date) {
-      id
-      location
-      magnitude
-      date
-    }
-  }
-`;
+import { ADD_EARTHQUAKE, GET_EARTHQUAKE, UPDATE_EARTHQUAKE } from "@/graphql";
 
 export default function EarthquakeForm() {
   const router = useRouter();
@@ -44,8 +12,7 @@ export default function EarthquakeForm() {
   const earthquakeId = searchParams.get("id");
 
   const { data } = useQuery(GET_EARTHQUAKE, {
-    variables: { id: earthquakeId },
-    skip: !earthquakeId,
+    variables: { id: earthquakeId }
   });
 
   const [location, setLocation] = useState(data?.earthquake?.location);
@@ -73,7 +40,7 @@ export default function EarthquakeForm() {
         variables: { location, magnitude: parseFloat(magnitude), date },
       });
     }
-    router.push("/"); // Redirect to home after submission
+    router.push("/?refetch=true"); // Redirect to home after submission
   };
 
   const openGoogleMaps = () => {

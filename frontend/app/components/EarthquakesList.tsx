@@ -1,29 +1,21 @@
 "use client";
+
 import Link from "next/link";
-import { gql, useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { useState } from "react";
-
-const EARTHQUAKE_QUERY = gql`
-  query Query {
-    earthquakes {
-      id
-      location
-      magnitude
-      date
-    }
-  }
-`;
-
-const DELETE_EARTHQUAKE = gql`
-  mutation DeleteEarthquake($id: Int!) {
-    deleteEarthquake(id: $id)
-  }
-`;
+import { DELETE_EARTHQUAKE, EARTHQUAKE_QUERY } from "@/graphql";
+import { useSearchParams } from "next/navigation";
 
 const Earthquake: React.FC = () => {
   const { loading, error, data, refetch } = useQuery(EARTHQUAKE_QUERY);
   const [deleteEarthquake] = useMutation(DELETE_EARTHQUAKE);
   const [currentPage, setCurrentPage] = useState(1);
+  const forceRefetch = useSearchParams().get("refetch");
+
+  // Refetch adding / editing
+  if (forceRefetch) {
+    refetch();
+  }
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;

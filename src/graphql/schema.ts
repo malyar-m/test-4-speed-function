@@ -1,6 +1,4 @@
-const typeDefs = `
-  #graphql
-
+const typeDefs = `#graphql
   type Earthquake {
     id: ID!
     location: String!

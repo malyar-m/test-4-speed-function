@@ -3,7 +3,17 @@ import Earthquake from '../models/Earthquake';
 const resolvers = {
   Query: {
     earthquakes: async () => await Earthquake.findAll(),
-    earthquake: async (id: number) => await Earthquake.findByPk(id),
+    earthquake: async (_: any, { id } : { id: any}) => {
+      console.error('Error fetching earthquake:', id);
+      try {
+        const earthquake = await Earthquake.findByPk(id);
+        if (!earthquake) throw new Error('Earthquake not found');
+        return earthquake;
+      } catch (error) {
+        console.error('Error fetching earthquake:', error);
+        throw error;
+      }
+    }
   },
   Mutation: {
     addEarthquake: async (_: any, { location, magnitude, date }: any) =>
